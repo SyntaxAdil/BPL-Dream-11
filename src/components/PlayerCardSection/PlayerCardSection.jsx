@@ -13,7 +13,7 @@ export const PlayerCardSection = () => {
   return (
     <section className="my-20">
       {/* header logic */}
-      <header className="grid grid-cols-1 md:grid-cols-2 gap-5 px-4 items-center">
+      <header className="grid grid-cols-1 md:grid-cols-2 gap-5 px-4 items-center sticky top-12 border-b border-base-300 md:top-25 py-6  bg-white z-15">
         <div>
           <h1 className="text-2xl font-bold">
             {selectCategory === "available"
@@ -63,10 +63,19 @@ export const PlayerCardSection = () => {
 
       {player.length === 0 ||
         (selectCategory === "selected" && chosen.length === 0 && (
-          <p className="text-center my-8 text-2xl text-black/30">
+          <p className="text-center my-8 text-xl md:text-2xl text-black/30">
             No player found.
           </p>
         ))}
+      {selectCategory === "selected" && (
+        <div className="border border-[#e7fe29] p-2 rounded-2xl w-50  my-8">
+          <button className="bg-[#e7fe29] btn w-full rounded-xl font-medium text-black text-md"
+          onClick={() => setSelectCategory("available")}
+          >
+            Add {chosen.length !== 0 ? "More" : ""} PLayers
+          </button>
+        </div>
+      )}
     </section>
   );
 };

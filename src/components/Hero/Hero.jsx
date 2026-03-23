@@ -1,7 +1,15 @@
 import HERO_BG_IMAGE from "../../assets/bg-shadow.png";
 import HERO_MAIN_IMAGE from "../../assets/banner-main.png";
+import { usePlayer } from "../../context/PlayerContext";
 
 const Hero = () => {
+
+
+  const{claimFreeCoin,claimCoin}=usePlayer()
+
+
+
+
   return (
     <section
       className=" md:rounded-3xl pt-30 md:p-8 bg-no-repeat bg-center bg-cover bg-black min-h-screen md:min-h-136 mt-2"
@@ -14,8 +22,12 @@ const Hero = () => {
             <p className="text-md md:text-xl text-base-300" >Beyond Boundaries Beyond Limits</p>
 
             <div className="border border-[#e7fe29] p-2 rounded-2xl w-50 mx-auto" >
-                <button className="bg-[#e7fe29] btn w-full rounded-xl font-medium text-black text-md">
-                    Claim Free Credit
+                <button className="bg-[#e7fe29] btn w-full rounded-xl font-medium text-black text-md" 
+                disabled={claimCoin}
+                
+                onClick={claimFreeCoin}
+                >
+                    { claimCoin ? "You Claimed free credit":"Claim Free Credit"}
 
                 </button>
 

@@ -28,7 +28,7 @@ const SelectedPlayerCard = ({ player }) => {
 
       {/* Delete button */}
       <button
-        onClick={() => onRemove(player.id)}
+        onClick={() => onRemove(player)}
         className="text-red-400 hover:text-red-600 transition-colors duration-150 p-1.5 rounded-lg hover:bg-red-50 cursor-pointer"
       >
         <TrashIcon />

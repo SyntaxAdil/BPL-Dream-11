@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Najmul Hossain Shanto",
+    "country": "Bangladesh",
+    "role": "Batsman",
+    "bat": "Left-Hand-Bat",
+    "price": 1200000,
+    "image": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/338700/338749.png"
+  },
+  {
+    "id": 2,
+    "name": "Litton Das",
+    "country": "Bangladesh",
+    "role": "Wicket-Keeper",
+    "bat": "Right-Hand-Bat",
+    "price": 900000,
+    "image": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/316700/316769.png"
+  },
+  {
+    "id": 3,
+    "name": "Taskin Ahmed",
+    "country": "Bangladesh",
+    "role": "Bowler",
+    "bat": "Right-Hand-Bat",
+    "price": 850000,
+    "image": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/316700/316775.png"
+  },
+  {
+    "id": 4,
+    "name": "Mehidy Hasan Miraz",
+    "country": "Bangladesh",
+    "role": "All-Rounder",
+    "bat": "Right-Hand-Bat",
+    "price": 870000,
+    "image": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/316700/316773.png"
+  },
+  {
+    "id": 5,
+    "name": "Mahmudullah Riyad",
+    "country": "Bangladesh",
+    "role": "All-Rounder",
+    "bat": "Right-Hand-Bat",
+    "price": 820000,
+    "image": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/316700/316767.png"
+  },
+  {
+    "id": 6,
+    "name": "Taijul Islam",
+    "country": "Bangladesh",
+    "role": "Bowler",
+    "bat": "Left-Hand-Bat",
+    "price": 750000,
+    "image": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/316700/316772.png"
+  },
+  {
+    "id": 7,
+    "name": "Towhid Hridoy",
+    "country": "Bangladesh",
+    "role": "Batsman",
+    "bat": "Right-Hand-Bat",
+    "price": 780000,
+    "image": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/380200/380283.png"
+  },
+  {
+    "id": 8,
+    "name": "Tanzid Hasan Tamim",
+    "country": "Bangladesh",
+    "role": "Batsman",
+    "bat": "Left-Hand-Bat",
+    "price": 720000,
+    "image": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/359400/359434.png"
+  },
+  {
+    "id": 9,
+    "name": "Rishad Hossain",
+    "country": "Bangladesh",
+    "role": "Bowler",
+    "bat": "Right-Hand-Bat",
+    "price": 700000,
+    "image": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/359400/359435.png"
+  },
+  {
+    "id": 10,
+    "name": "Shakib Al Hasan",
+    "country": "Bangladesh",
+    "role": "All-Rounder",
+    "bat": "Left-Hand-Bat",
+    "price": 950000,
+    "image": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/316700/316766.png"
+  },
+  {
+    "id": 11,
+    "name": "Mushfiqur Rahim",
+    "country": "Bangladesh",
+    "role": "Wicket-Keeper",
+    "bat": "Right-Hand-Bat",
+    "price": 850000,
+    "image": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/316700/316768.png"
+  },
+  {
+    "id": 12,
+    "name": "Mustafizur Rahman",
+    "country": "Bangladesh",
+    "role": "Bowler",
+    "bat": "Right-Hand-Bat",
+    "price": 800000,
+    "image": "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/316700/316771.png"
+  }
+]

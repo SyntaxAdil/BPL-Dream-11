@@ -12,7 +12,7 @@ const NAV_LINKS = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const links = NAV_LINKS.map((route) => (
-    <li key={route} onClick={() => setOpen((p) => !p)}>
+    <li key={route.name} onClick={() => setOpen((p) => !p)}>
       <a
         className="transition-colors duration-150 text-gray-600 hover:text-gray-900"
         href={route.href}
@@ -24,9 +24,9 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="p-4 flex items-center justify-between  px-6 ">
+      <nav className="p-2 md:p-4 flex items-center justify-between  px-6 ">
         <div>
-          <img src={NAV_IMAGE} alt="LOGO" />
+          <img src={NAV_IMAGE} alt="LOGO" className="w-10 md:w-full" />
         </div>
         <ul className="hidden md:flex  items-center gap-10 font-medium ">
           {links}

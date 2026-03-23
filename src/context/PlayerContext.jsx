@@ -3,12 +3,13 @@ import { createContext, useContext, useState } from "react";
 const PlayerContextApi = createContext(null);
 export const usePlayer = () => useContext(PlayerContextApi);
 import toast from "react-hot-toast";
+import useLocalStorage from './../components/hooks/useLocalStorage';
 
 const fetchPlayer = fetch("/playerData.json").then((res) => res.json());
 const PlayerContext = ({ children }) => {
-  const [chosen, setChosen] = useState([]);
-  const [coin, setCoin] = useState(0);
-  const [claimCoin, setClaimCoin] = useState(false);
+  const [chosen, setChosen] = useLocalStorage("chosen",[]);
+  const [coin, setCoin] = useLocalStorage("coin",0)
+  const [claimCoin, setClaimCoin] = useLocalStorage("claimCoin",false)
   const [openDltPopup, setOpenDltPopup] = useState(false);
   const [selectDeleteItem, setSelectDeleteItem] = useState(null);
   const addChose = (item) => {
@@ -50,17 +51,15 @@ const PlayerContext = ({ children }) => {
   };
 
   const confirmDlt = () => {
-    if(!selectDeleteItem) return
+    if (!selectDeleteItem) return;
     toast.success(
       `${selectDeleteItem.name.split(" ").slice(0, 1)} removed Successfully and receive ${parseInt(selectDeleteItem.price) * 0.5}!`,
     );
     setChosen((prev) => prev.filter((i) => i.id !== selectDeleteItem.id));
     setCoin((p) => p + parseInt(selectDeleteItem.price) * 0.5);
 
-    setSelectDeleteItem(null)
+    setSelectDeleteItem(null);
     setOpenDltPopup((p) => !p);
-    
-
   };
 
   const claimFreeCoin = () => {

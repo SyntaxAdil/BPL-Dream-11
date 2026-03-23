@@ -11,13 +11,13 @@ export const PlayerCardSection = () => {
   const selectedClass = "bg-[#e7fe29] text-black";
 
   return (
-    <section className="my-20">
+    <section className="my-10 md:my-20">
       {/* header logic */}
       <header className="grid grid-cols-1 md:grid-cols-2 gap-5 px-4 items-center sticky top-12 border-b border-base-300 md:top-25 py-6  bg-white z-15">
         <div>
           <h1 className="text-2xl font-bold">
             {selectCategory === "available"
-              ? "Available Players"
+              ? `Available Players (${player.length})`
               : `Selected Player (${chosen.length}/6)`}
           </h1>
         </div>
@@ -63,7 +63,7 @@ export const PlayerCardSection = () => {
 
       {player.length === 0 ||
         (selectCategory === "selected" && chosen.length === 0 && (
-          <p className="text-center my-8 text-xl md:text-2xl text-black/30">
+          <p className="text-center my-18 text-xl md:text-2xl text-black/30">
             No player found.
           </p>
         ))}

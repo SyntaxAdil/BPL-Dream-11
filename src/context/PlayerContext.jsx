@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useState } from "react";
 const PlayerContextApi = createContext(null);
 export const usePlayer = () => useContext(PlayerContextApi);
@@ -8,6 +9,8 @@ const PlayerContext = ({ children }) => {
   const [chosen, setChosen] = useState([]);
   const [coin, setCoin] = useState(0);
   const [claimCoin, setClaimCoin] = useState(false);
+  const [openDltPopup, setOpenDltPopup] = useState(false);
+  const [selectDeleteItem, setSelectDeleteItem] = useState(null);
   const addChose = (item) => {
     setChosen((prev) => {
       if (prev.find((i) => i.id === item.id)) {
@@ -38,18 +41,31 @@ const PlayerContext = ({ children }) => {
       if (coin >= item.price) {
         return [...prev, { ...item }];
       }
-      return prev
+      return prev;
     });
   };
   const onRemove = (item) => {
-    toast.success(`${item.name.split(" ").slice(0, 1)} removed Successfully and receive ${parseInt(item.price)*0.5}!`);
-    setChosen((prev) => prev.filter((i) => i.id !== item.id));
-    setCoin((p) => p + parseInt(item.price)*0.5);
+    setSelectDeleteItem(item);
+    setOpenDltPopup((p) => !p);
+  };
+
+  const confirmDlt = () => {
+    if(!selectDeleteItem) return
+    toast.success(
+      `${selectDeleteItem.name.split(" ").slice(0, 1)} removed Successfully and receive ${parseInt(selectDeleteItem.price) * 0.5}!`,
+    );
+    setChosen((prev) => prev.filter((i) => i.id !== selectDeleteItem.id));
+    setCoin((p) => p + parseInt(selectDeleteItem.price) * 0.5);
+
+    setSelectDeleteItem(null)
+    setOpenDltPopup((p) => !p);
+    
+
   };
 
   const claimFreeCoin = () => {
     toast.success(`Congratulations! You got 5,000,000 coins!`);
-    setCoin(5000000 );
+    setCoin(5000000);
     setClaimCoin(true);
   };
 
@@ -61,6 +77,9 @@ const PlayerContext = ({ children }) => {
     coin,
     claimFreeCoin,
     claimCoin,
+    openDltPopup,
+    confirmDlt,
+    setOpenDltPopup,
   };
   return (
     <PlayerContextApi.Provider value={value}>

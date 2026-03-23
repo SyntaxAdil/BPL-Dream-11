@@ -3,7 +3,7 @@ import NewsLetter from "../Newsletter/NewsLetter";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0d1117] text-white pt-45 mt-70 relative">
+    <footer className="bg-[#0d1117] text-white pt-45 mt-40 md:mt-70 relative">
       {/* Newsletter */}
       <NewsLetter extraClass="absolute -top-25 right-0 left-0" />
       {/* Main Footer */}

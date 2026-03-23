@@ -65,7 +65,7 @@ const Navbar = () => {
         <ul className="flex flex-col mt-10 items-center  gap-8 font-medium px-2">
           {links}
           <button className="px-4 py-2 rounded-md border border-base-300 flex items-center justify-center w-full gap-2 ">
-            0 Coin
+            {coin?.toLocaleString()} Coin
             <img src={COIN_IMAGE} alt="Double Dollar" />
           </button>
         </ul>

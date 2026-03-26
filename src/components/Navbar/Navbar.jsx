@@ -39,7 +39,7 @@ const Navbar = () => {
         </ul>
 
         <button
-          className="btn bg-[#e7fe29] btn-ghost block md:hidden"
+          className="btn cursor-pointer hover:bg-[#e7fe29] btn-ghost block md:hidden"
           onClick={() => setOpen((p) => !p)}
         >
           <Menu />
@@ -56,7 +56,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <img src={NAV_IMAGE} alt="LOGO" width={60} />
           <button
-            className="btn bg-[#e7fe29] btn-ghost"
+            className="btn hover:bg-[#e7fe29] btn-ghost"
             onClick={() => setOpen((p) => !p)}
           >
             <X />

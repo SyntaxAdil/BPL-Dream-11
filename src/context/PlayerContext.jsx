@@ -3,14 +3,13 @@ import { createContext, useContext, useState } from "react";
 const PlayerContextApi = createContext(null);
 export const usePlayer = () => useContext(PlayerContextApi);
 import toast from "react-hot-toast";
-import useLocalStorage from './../components/hooks/useLocalStorage';
+import useLocalStorage from "./../components/hooks/useLocalStorage";
 
 const fetchPlayer = fetch("/playerData.json").then((res) => res.json());
 const PlayerContext = ({ children }) => {
-  const [chosen, setChosen] = useLocalStorage("chosen",[]);
-  const [coin, setCoin] = useLocalStorage("coin",0)
-  const [claimCoin, setClaimCoin] = useLocalStorage("claimCoin",false)
-  const [openDltPopup, setOpenDltPopup] = useState(false);
+  const [chosen, setChosen] = useLocalStorage("chosen", []);
+  const [coin, setCoin] = useLocalStorage("coin", 0);
+  const [claimCoin, setClaimCoin] = useLocalStorage("claimCoin", false);
   const [selectDeleteItem, setSelectDeleteItem] = useState(null);
   const addChose = (item) => {
     setChosen((prev) => {
@@ -47,7 +46,6 @@ const PlayerContext = ({ children }) => {
   };
   const onRemove = (item) => {
     setSelectDeleteItem(item);
-    setOpenDltPopup((p) => !p);
   };
 
   const confirmDlt = () => {
@@ -59,7 +57,6 @@ const PlayerContext = ({ children }) => {
     setCoin((p) => p + parseInt(selectDeleteItem.price) * 0.5);
 
     setSelectDeleteItem(null);
-    setOpenDltPopup((p) => !p);
   };
 
   const claimFreeCoin = () => {
@@ -67,7 +64,14 @@ const PlayerContext = ({ children }) => {
     setCoin(5000000);
     setClaimCoin(true);
   };
+  const restartGame = () => {
+    setChosen([]);
+    setCoin(0);
+    setClaimCoin(false);
+    toast.success("Initiating from the beginning.")
 
+    
+  };
   const value = {
     fetchPlayer,
     addChose,
@@ -76,9 +80,8 @@ const PlayerContext = ({ children }) => {
     coin,
     claimFreeCoin,
     claimCoin,
-    openDltPopup,
     confirmDlt,
-    setOpenDltPopup,
+    restartGame
   };
   return (
     <PlayerContextApi.Provider value={value}>
